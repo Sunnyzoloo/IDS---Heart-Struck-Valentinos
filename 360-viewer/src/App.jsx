@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import loadKrpano from './loadKrpano';
-
+import HandleMouseClick from "./components/mouseLocator.jsx"
 import './App.css';
 
 function App() {
@@ -8,11 +8,22 @@ function App() {
     loadKrpano();
   }, []);
 
+  const handleClick = (event) => {
+    console.log('clicked', event)
+  }
+
   return (
+    <>
+
+    <HandleMouseClick></HandleMouseClick>
     <div id="app">
-      <div id="krpano-target"></div>
+      <div id="krpano-target" onClick={handleClick}></div>
     </div>
+
+    
+    </>
   );
 }
+
 
 export default App;

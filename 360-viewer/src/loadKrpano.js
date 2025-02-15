@@ -1,6 +1,7 @@
 const KRPANO_VIEWER_TARGET_ID = "krpano-target";
 const KRPANO_VIEWER_ID = "krpano-viewer";
 
+
 const loadKrpano = () => {
   let xmlStr;
 
@@ -34,7 +35,7 @@ const loadKrpano = () => {
 
       const serializer = new XMLSerializer();
       xmlStr = serializer.serializeToString(xmlDoc);
-
+      
       // eslint-disable-next-line no-undef
       embedpano({
         xml: null,
@@ -50,5 +51,6 @@ const loadKrpano = () => {
     })
     .catch(onKRPanoError);
 };
+
 
 export default loadKrpano;
